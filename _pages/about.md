@@ -20,19 +20,32 @@ I am a **PhD candidate** in the **INFRES laboratory** at **Télécom Paris** wh
 ---
 
 ## Research Interests
-<div style="display:flex; align-items:flex-start;">
-  <ul style="margin-right:1rem;">
+<div style="
+     display:flex;
+     flex-direction:column;   /* stack list then image           */
+     align-items:flex-start;  /* keep everything left-aligned…   */
+">
+
+  <ul style="margin:0 0 1rem 0;">
     <li>Zero-knowledge proof systems (zk-SNARKs, zk-STARKs)</li>
     <li>Post-quantum cryptography</li>
-    <li>Privacy‑preserving identity and credential systems</li>
+    <li>Privacy-preserving identity and credential systems</li>
     <li>Decentralized ledger technologies</li>
     <li>Secure biometric protocols</li>
   </ul>
 
+  <!-- the magic: align only this item to the center -->
   <img src="/images/ghibli_cybersecurity.png"
        alt="Stylised zero-knowledge diagram"
-       style="max-width:270px; height:auto; border-radius:8px;">
+       style="
+         max-width:270px;
+         height:auto;
+         border-radius:8px;
+         align-self:center;   /* centers just the image */
+       ">
 </div>
+
+
 
 
 ---
