@@ -5,32 +5,43 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
 
 
+<hr/>
 
+<section class="paper">
+  <h2>Monchi: Multi‑Scheme Optimization for Collaborative Homomorphic Identification</h2>
+  <p><strong>Year:</strong> 2024<br/>
+     <strong>Authors:</strong> A. Ibarrondo, <strong>I. Kerenciler</strong>, H. Chabanne, D. Vincent, M. Önen<br/>
+     <strong>Venue:</strong> <em>ACM Workshop on Information Hiding &amp; Multimedia Security (IH&amp;MMSec 2024)</em>, pp.&nbsp;211‑222
+  </p>
+
+  <figure style="display:flex; justify-content:center;">
+    <img src="/images/monchi-placeholder-2.png"
+        alt="Monchi overview diagram"
+        style="max-width:60%; height:auto;">
+  </figure>
+
+  <h3>Abstract</h3>
+  <p>This paper introduces a novel protocol for privacy-preserving biometric identification, named Monchi, that combines the use of homomorphic encryption for the computation of the identification score with function secret sharing to obliviously compare this score with a given threshold and finally output the binary result. Given the cost of homomorphic encryption, BFV in this solution, we study and evaluate the integration of two packing solutions that enable the regrouping of multiple templates in one ciphertext to improve efficiency meaningfully. We propose an end-to-end protocol, prove it secure and implement it. Our experimental results attest to Monchi's applicability to the real-life use case of an airplane boarding scenario with 1000 passengers,taking less than one second to authorize/deny access to the plane to each passenger via biometric identification while maintaining the privacy of all passengers.</p>
+</section>
+
+<hr/>
+
+<section class="paper">
+  <h2>Differentially Private Adversarial Auto‑Encoder to Protect Gender in Voice Biometrics</h2>
+  <p><strong>Year:</strong> 2023<br/>
+     <strong>Authors:</strong> O. Chouchane, M. Panariello, O. Zari, <strong>I. Kerenciler</strong>, I. Chihaoui, M. Todisco, M. Önen<br/>
+     <strong>Venue:</strong> <em>ACM Workshop on Information Hiding &amp; Multimedia Security (IH&amp;MMSec 2023)</em>, pp.&nbsp;127‑132
+  </p>
+
+  <figure style="display:flex; justify-content:center;">
+    <img src="/images/dpaae-placeholder.png"
+        alt="Differentially private AAE diagram"
+        style="max-width:60%; height:auto;">
+  </figure>
+
+
+  <h3>Abstract</h3>
+  <p>Over the last decade, the use of Automatic Speaker Verification (ASV) systems has become increasingly widespread in response to the growing need for secure and efficient identity verification methods. The voice data encompasses a wealth of personal information, which includes but is not limited to gender, age, health condition, stress levels, and geographical and socio-cultural origins. These attributes, known as soft biometrics, are private and the user may wish to keep them confidential. However, with the advancement of machine learning algorithms, soft biometrics can be inferred automatically, creating the potential for unauthorized use. As such, it is crucial to ensure the protection of these personal data that are inherent within the voice while retaining the utility of identity recognition. In this paper, we present an adversarial Auto-Encoder-based approach to hide gender-related information in speaker embeddings, while preserving their effectiveness for speaker verification. We use an adversarial procedure against a gender classifier and incorporate a layer based on the Laplace mechanism into the Auto-Encoder architecture. This layer adds Laplace noise for more robust gender concealment and ensures differential privacy guarantees during inference for the output speaker embeddings. Experiments conducted on the VoxCeleb dataset demonstrate that speaker verification tasks can be effectively carried out while concealing speaker gender and ensuring differential privacy guarantees; moreover, the intensity of the Laplace noise can be tuned to select the desired trade-off between privacy and utility.</p>
+</section>
